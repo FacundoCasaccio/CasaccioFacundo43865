@@ -1,0 +1,29 @@
+{% extends 'aplication/index.html' %}
+{% load static %}
+
+
+{% block titulo %}
+Ticket {{ object.id }}
+{% endblock titulo %}
+
+{% block contenido %}
+<h2>{{object}}</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Artista</th>
+            <th>Fecha</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ object.id }}</td>
+        <td>{{ object.artista }}</td>
+        <td>{{ object.fecha }}</td>
+        <td>{{ object.precio }}</td>
+    </tr>
+    </tbody>
+</table>
+{% endblock contenido %}

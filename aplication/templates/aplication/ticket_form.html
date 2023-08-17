@@ -1,0 +1,20 @@
+{% extends 'aplication/index.html' %}
+{% load static %}
+
+
+{% block titulo %}
+Caracteristicas Ticket
+{% endblock titulo %}
+    
+{% block contenido %}
+
+<h2>Caracteristicas Ticket</h2>
+<form action="" method="POST">
+    {% csrf_token %} 
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Enviar">
+</form>
+
+{% endblock contenido %}

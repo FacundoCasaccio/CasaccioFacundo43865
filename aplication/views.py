@@ -18,6 +18,9 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     return render(request, "aplication/index.html")
 
+def about(request):
+    return render(request, "aplication/about.html")
+
 # ____________Class based view: Instrumento
 class InstrumentoList(LoginRequiredMixin, ListView):
     model = Instrumento
@@ -80,6 +83,27 @@ class RemeraUpdate(LoginRequiredMixin, UpdateView):
 class RemeraDelete(LoginRequiredMixin, DeleteView):
     model = Remera
     success_url = reverse_lazy('remeras')  
+
+# ____________Class based view: Ticket
+class TicketList(LoginRequiredMixin, ListView):
+    model = Ticket
+
+class TicketCreate(LoginRequiredMixin, CreateView):
+    model = Ticket
+    fields = ['artista', 'fecha', 'precio']
+    success_url = reverse_lazy('tickets')
+
+class TicketDetail(LoginRequiredMixin, DetailView):
+    model = Ticket
+
+class TicketUpdate(LoginRequiredMixin, UpdateView):
+    model = Ticket
+    fields = ['artista', 'fecha', 'precio']
+    success_url = reverse_lazy('tickets')    
+
+class TicketDelete(LoginRequiredMixin, DeleteView):
+    model = Ticket
+    success_url = reverse_lazy('tickets')  
 
 # ____________Formulario de busqueda de instrumentos
 @login_required
@@ -176,11 +200,11 @@ def agregarAvatar(request):
                 current_avatar[0].delete()
 
             # Guardar nuevo
-            avatar = UserAvatar(user=user, imagen=avatar_form.cleaned_data['imagen'])
+            avatar = UserAvatar(user=user, image=avatar_form.cleaned_data['image'])
             avatar.save()
 
             # Guardar direccion de avatar
-            imagen = UserAvatar.objects.get(user=request.user.id).imagen.url
+            imagen = UserAvatar.objects.get(user=request.user.id).image.url
             request.session['avatar'] = imagen
 
             return render(request, "aplication/index.html")

@@ -25,6 +25,14 @@ class Remera(models.Model):
 
     def __str__(self):
         return f"Remera {self.modelo}, color {self.color}"
+    
+class Ticket(models.Model):
+    artista = models.CharField(max_length=50)
+    fecha = models.DateField()
+    precio = models.FloatField()
+
+    def __str__(self):
+        return f"Ticket para {self.artista} el {self.fecha}"
  
 class UserAvatar(models.Model):
     image = models.ImageField(upload_to="avatars")

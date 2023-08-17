@@ -27,6 +27,13 @@ urlpatterns = [
     path('modificar_remera/<int:pk>/', RemeraUpdate.as_view(), name="update_remera"),
     path('eliminar_remera/<int:pk>/', RemeraDelete.as_view(), name="delete_remera"),
 
+    # ________Direcciones de tickets
+    path('tickets/', TicketList.as_view(), name="tickets"),
+    path('cargar_ticket/', TicketCreate.as_view(), name="create_ticket"),
+    path('detalle_ticket/<int:pk>/', TicketDetail.as_view(), name="detail_ticket"),
+    path('modificar_ticket/<int:pk>/', TicketUpdate.as_view(), name="update_ticket"),
+    path('eliminar_ticket/<int:pk>/', TicketDelete.as_view(), name="delete_ticket"),
+
     # ________Direccion formulario de busqueda
     path('buscar_instrumentos/', busquedaForm, name="buscar_instrumentos"),
 
@@ -38,4 +45,7 @@ urlpatterns = [
     # ________Direcciones autenticacion
     path('editar_perfil/', editarPerfil, name="editar_perfil"),
     path('agregar_avatar/', agregarAvatar, name="agregar_avatar"),
+
+    # ________Direccion Acerca de
+    path('acerca_de/', about, name="acerca_de"),
 ]
