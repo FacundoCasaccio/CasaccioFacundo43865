@@ -1,20 +1,18 @@
 {% extends 'aplication/index.html' %}
-{% load static %}
-
+{% load static %} 
 
 {% block titulo %}
-Cargar Instrumentos
-{% endblock titulo %}
-    
+Registro
+{% endblock titulo %} 
+
 {% block contenido %}
-<div>
-    <h2>Cargar Instrumento</h2>
+
     <form action="" method="POST">
-        {% csrf_token %} 
+        {% csrf_token %}
         <table>
             {{ form.as_table }}
         </table>
-        <input type="submit" value="Enviar">
+        <button type="submit">Registrarse</button>
     </form>
-</div>
+
 {% endblock contenido %}

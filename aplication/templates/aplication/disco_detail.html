@@ -3,28 +3,27 @@
 
 
 {% block titulo %}
-Remeras
+Disco {{ object.id }}
 {% endblock titulo %}
 
 {% block contenido %}
+<h2>Disco: {{object}}</h1>
 <table class="table">
     <thead>
         <tr>
             <th>Id</th>
-            <th>Modelo</th>
-            <th>Color</th>
+            <th>Artista</th>
+            <th>Album</th>
             <th>Precio</th>
         </tr>
     </thead>
     <tbody>
-    {% for remera in remeras %}
     <tr>
-        <td>{{ remera.id }}</td>
-        <td>{{ remera.modelo }}</td>
-        <td>{{ remera.color }}</td>
-        <td>{{ remera.precio }}</td>
+        <td>{{ object.id }}</td>
+        <td>{{ object.artista }}</td>
+        <td>{{ object.album }}</td>
+        <td>{{ object.precio }}</td>
     </tr>
-    {% endfor %}
     </tbody>
 </table>
 {% endblock contenido %}

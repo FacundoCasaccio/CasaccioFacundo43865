@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Instrumento(models.Model):
     tipo = models.CharField(max_length=50)
@@ -7,7 +8,7 @@ class Instrumento(models.Model):
     precio = models.FloatField(null=False, blank=False)
 
     def __str__(self):
-        return f"{self.tipo} {self.marca} - Modelo: {self.modelo} - ${self.precio}"
+        return f"{self.tipo} {self.marca} - {self.modelo}"
     
 class Disco(models.Model):
     artista = models.CharField(max_length=50)
@@ -15,7 +16,7 @@ class Disco(models.Model):
     precio = models.FloatField()
 
     def __str__(self):
-        return f"{self.album} - {self.artista} - ${self.precio}"
+        return f"{self.album} - {self.artista}"
 
 class Remera(models.Model):
     modelo = models.CharField(max_length=50)
@@ -23,4 +24,11 @@ class Remera(models.Model):
     precio = models.FloatField()
 
     def __str__(self):
-        return f"Remera {self.modelo}, color: {self.color} - ${self.precio}"
+        return f"Remera {self.modelo}, color {self.color}"
+ 
+class UserAvatar(models.Model):
+    image = models.ImageField(upload_to="avatars")
+    user = models.ForeignKey(User, on_delete= models.CASCADE)
+
+    def __str__(self):
+        return f"{self.user} {self.image}"

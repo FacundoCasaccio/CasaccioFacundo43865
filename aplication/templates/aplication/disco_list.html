@@ -17,14 +17,22 @@ Discos
         </tr>
     </thead>
     <tbody>
-    {% for disco in discos %}
+    {% for disco in disco_list %}
     <tr>
         <td>{{ disco.id }}</td>
         <td>{{ disco.artista }}</td>
         <td>{{ disco.album }}</td>
         <td>{{ disco.precio }}</td>
+
+        <td>
+            <a href="{% url 'detail_disco' disco.id %}" class="btn btn-primary">Info</a>
+            <a href="{% url 'update_disco' disco.id %}" class="btn btn-primary">Modificar</a>
+            <a href="{% url 'delete_disco' disco.id %}" class="btn btn-danger">X</a>
+        </td>
     </tr>
     {% endfor %}
     </tbody>
 </table>
+
+<a href="{% url 'create_disco' %}" class="btn btn-primary btn-lg">Cargar nuevo</a>
 {% endblock contenido %}

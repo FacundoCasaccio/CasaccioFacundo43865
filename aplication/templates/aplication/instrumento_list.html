@@ -18,15 +18,23 @@ Instrumentos
         </tr>
     </thead>
     <tbody>
-    {% for instrumento in instrumentos %}
+    {% for instrumento in instrumento_list %}
     <tr>
         <td>{{ instrumento.id }}</td>
         <td>{{ instrumento.tipo }}</td>
         <td>{{ instrumento.marca }}</td>
         <td>{{ instrumento.modelo }}</td>
         <td>{{ instrumento.precio }}</td>
+
+        <td>
+            <a href="{% url 'detail_instrumento' instrumento.id %}" class="btn btn-primary">Info</a>
+            <a href="{% url 'update_instrumento' instrumento.id %}" class="btn btn-primary">Modificar</a>
+            <a href="{% url 'delete_instrumento' instrumento.id %}" class="btn btn-danger">X</a>
+        </td>
     </tr>
     {% endfor %}
     </tbody>
 </table>
+<a href="{% url 'create_instrumento' %}" class="btn btn-primary btn-lg">Cargar nuevo</a>
+
 {% endblock contenido %}

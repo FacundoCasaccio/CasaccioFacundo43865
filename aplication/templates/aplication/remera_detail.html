@@ -1,0 +1,29 @@
+{% extends 'aplication/index.html' %}
+{% load static %}
+
+
+{% block titulo %}
+Remera {{ object.id }}
+{% endblock titulo %}
+
+{% block contenido %}
+<h2>{{object}}</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Modelo</th>
+            <th>Color</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ object.id }}</td>
+        <td>{{ object.modelo }}</td>
+        <td>{{ object.color }}</td>
+        <td>{{ object.precio }}</td>
+    </tr>
+    </tbody>
+</table>
+{% endblock contenido %}

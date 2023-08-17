@@ -1,0 +1,20 @@
+{% extends 'aplication/index.html' %}
+{% load static %}
+
+
+{% block titulo %}
+Caracteristicas Instrumento
+{% endblock titulo %}
+    
+{% block contenido %}
+<div>
+    <h2>Caracteristicas Instrumento</h2>
+    <form action="" method="POST">
+        {% csrf_token %} 
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Enviar">
+    </form>
+</div>
+{% endblock contenido %}
