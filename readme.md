@@ -35,4 +35,4 @@ Aquellos usuarios que no hayan iniciado sesion solo podran ver la pagina de inic
 
 La aplicacion tambien cuenta con una pagina de informacion sobre su creador que puede accederse desde el link en el footer **Acerca de...**, y esta disponible para todos los usuarios
 
-Se creo una [planilla](https://docs.google.com/spreadsheets/d/1cwzr5OoP8mbJWSF_-J263J-UXiW1myPC49F8PwXhoSM/edit?usp=sharing) con cinco casos de prueba basicos para poder probar la funcionalidad de la aplicacion. 
+Puede ver tambien la [planilla](https://docs.google.com/spreadsheets/d/1cwzr5OoP8mbJWSF_-J263J-UXiW1myPC49F8PwXhoSM/edit?usp=sharing) con cinco casos de prueba basicos probar las funcionalidades base de la aplicacion.
